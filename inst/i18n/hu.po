@@ -18,3 +18,6 @@ msgstr "Fordítandó szöveg"
 #. The best programming language all around!
 msgid "R"
 msgstr "R"
+
+msgid "OK"
+msgstr ""
