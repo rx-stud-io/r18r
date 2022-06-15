@@ -49,3 +49,5 @@ translate('Text to be translated', ns = 'r18r')
 2. Run `translations_generate` to extract the above terms and generate your POT and PO files.
 3. Run `translations_import` to import your PO files into an `r18r` namespace (default to using your package name as the `ns`) and pick a default language with `translate_set_language` as part of your `.onLoad` function.
 4. Use the `translate` function in your package to return messages in the supported languages, generate localized plots etc.
+
+For an example implementation, check out the `r18r.example` package's `zzz.R` file for init and `example.R` for a translation call.
