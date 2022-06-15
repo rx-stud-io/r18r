@@ -29,6 +29,10 @@ jobs:
         run: devtools::install()
         shell: Rscript {0}
 
+      - name: Install example pkg
+        run: devtools::install('inst/r18r.example')
+        shell: Rscript {0}
+
       - name: Test coverage
         run: covr::codecov()
         shell: Rscript {0}

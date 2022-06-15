@@ -46,4 +46,8 @@ jobs:
         run: devtools::install()
         shell: Rscript {0}
 
+      - name: Install example pkg
+        run: devtools::install('inst/r18r.example')
+        shell: Rscript {0}
+
       - uses: r-lib/actions/check-r-package@v1
