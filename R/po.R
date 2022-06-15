@@ -19,6 +19,7 @@ getlines <- function(lines, prefix) {
 #' @param file PO file path
 #' @return list
 #' @keywords internal
+#' @importFrom stats setNames
 po_read <- function(file) {
 
     if (!file.exists(file)) {

@@ -15,7 +15,8 @@ License: file LICENSE
 Imports:
     processx,
     logger,
-    desc,
+    desc
+Suggests:
     testthat,
     devtools
 RoxygenNote: 7.1.2

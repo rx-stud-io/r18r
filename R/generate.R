@@ -8,6 +8,8 @@
 #' @importFrom processx run
 #' @importFrom logger log_trace skip_formatter log_error
 #' @importFrom desc desc
+#' @importFrom stats na.omit
+#' @importFrom utils head
 translations_generate <- function(folder,
                                   copyright_holder = NA_character_,
                                   language_team = NA_character_

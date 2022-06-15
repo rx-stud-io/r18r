@@ -151,6 +151,7 @@ T <- translatable
 
 
 #' Test if translation works for a language by looking up a term
+#' @inheritParams assert_language_in_namespace
 #' @return string
 #' @export
 test_translate <- function(language = 'en') {

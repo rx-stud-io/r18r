@@ -6,6 +6,9 @@
 \usage{
 test_translate(language = "en")
 }
+\arguments{
+\item{language}{two-character language code, e.g. \code{en}}
+}
 \value{
 string
 }
