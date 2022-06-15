@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: r18n 1.0\n"
 "POT-Creation-Date: 2022-06-15\n"
-"PO-Revision-Date: 2022-06-15 15:37:05\n"
+"PO-Revision-Date: 2022-06-15 15:40:34\n"
 "Last-Translator: NA\n"
 "Language-Team: NA\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,7 @@ msgstr ""
 msgid "Text to be translated"
 msgstr ""
 
+#. The best programming language all around!
 msgid "R"
 msgstr ""
 

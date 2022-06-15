@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: r18n 1.0\n"
-"POT-Creation-Date: 2022-06-15 00:00:00\n"
+"POT-Creation-Date: 2022-06-15\n"
 "PO-Revision-Date: 2022-06-15 00:00:00\n"
 "Last-Translator: Rx Studio <support@rx.studio>\n"
 "Language-Team: Rx Studio <support@rx.studio>\n"
@@ -15,5 +15,6 @@ msgstr ""
 msgid "Text to be translated"
 msgstr ""
 
+#. The best programming language all around!
 msgid "R"
 msgstr ""

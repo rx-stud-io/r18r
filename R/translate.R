@@ -161,6 +161,5 @@ test_translate <- function(language = 'en') {
 #' Container for future translations
 #' @keywords internal
 unused <- function() {
-    T('R')
+    T('R', 'The best programming language all around!')
 }
-
