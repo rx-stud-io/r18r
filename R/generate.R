@@ -95,6 +95,10 @@ translations_generate <- function(folder,
     ## English template
     enpo <- path.expand(file.path(folder, 'inst', 'i18n', 'en.po'))
 
+    if (!file.exists(enpo)) {
+        cat('# Copyright (C) ', format(Sys.time(), '%Y'), ' ', copyright_holder, '\nmsgid ""\nmsgstr ""\n"Project-Id-Version: ', package_name, ' 1.0\\n"\n"POT-Creation-Date: ', package_date, '\\n"\n"PO-Revision-Date: ', format(Sys.time()), '\\n"\n"Last-Translator: ', language_team, '\\n"\n"Language-Team: ', language_team, '\\n"\n"Language: English\\n"\n"MIME-Version: 1.0\\n"\n"Content-Type: text/plain; charset=UTF-8\\n"\n"Content-Transfer-Encoding: 8bit\\n"\n\n', sep = '', file = enpo) # nolint
+    }
+
     run(
         command = 'msgmerge',
         args = c(
