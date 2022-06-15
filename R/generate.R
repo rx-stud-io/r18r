@@ -3,6 +3,7 @@
 #' @param folder path to R package
 #' @param copyright_holder name of the organization or person owning the rights over the PO files
 #' @param language_team name and email address of the team
+#' @param languages optional character vector of language codes to translate (use to add new languages)
 #' @export
 #' @note System dependency of \code{gettext}.
 #' @importFrom processx run
@@ -12,7 +13,8 @@
 #' @importFrom utils head
 translations_generate <- function(folder,
                                   copyright_holder = NA_character_,
-                                  language_team = NA_character_
+                                  language_team = NA_character_,
+                                  languages
                                   ) { # nolint
 
     d <- tryCatch(
@@ -60,7 +62,7 @@ translations_generate <- function(folder,
     if (!dir.exists(dirname(pot))) {
         dir.create(dirname(pot), recursive = TRUE)
     }
-    cat('# Copyright (C) ', format(Sys.time(), '%Y'), ' ', copyright_holder, '\nmsgid ""\nmsgstr ""\n"Project-Id-Version: ', package_name, ' 1.0\\n"\n"POT-Creation-Date: ', package_date, '\\n"\n"PO-Revision-Date: ', format(Sys.time()), '\\n"\n"Last-Translator: ', language_team, '\\n"\n"Language-Team: ', language_team, '\\n"\n"MIME-Version: 1.0\\n"\n"Content-Type: text/plain; charset=UTF-8\\n"\n"Content-Transfer-Encoding: 8bit\\n"\n\n', sep = '', file = pot) # nolint
+    cat(generate_po(copyright_holder, package_name, package_date, language_team), file = pot)
 
     ## drop duplicates
     strings <- unique(strings)
@@ -96,7 +98,16 @@ translations_generate <- function(folder,
     enpo <- path.expand(file.path(folder, 'inst', 'i18n', 'en.po'))
 
     if (!file.exists(enpo)) {
-        cat('# Copyright (C) ', format(Sys.time(), '%Y'), ' ', copyright_holder, '\nmsgid ""\nmsgstr ""\n"Project-Id-Version: ', package_name, ' 1.0\\n"\n"POT-Creation-Date: ', package_date, '\\n"\n"PO-Revision-Date: ', format(Sys.time()), '\\n"\n"Last-Translator: ', language_team, '\\n"\n"Language-Team: ', language_team, '\\n"\n"Language: English\\n"\n"MIME-Version: 1.0\\n"\n"Content-Type: text/plain; charset=UTF-8\\n"\n"Content-Transfer-Encoding: 8bit\\n"\n\n', sep = '', file = enpo) # nolint
+        cat(generate_po(copyright_holder, package_name, package_date, language_team, language = 'en'), file = enpo)
+    }
+    if (!missing(languages)) {
+        for (l in languages) {
+            po <- path.expand(file.path(folder, 'inst', 'i18n', paste(l, 'po', sep = '.')))
+            if (!file.exists(po)) {
+                cat(generate_po(copyright_holder, package_name, package_date, language_team, language = l),
+                    file = po)
+            }
+        }
     }
 
     run(
@@ -120,3 +131,27 @@ translations_generate <- function(folder,
 
 }
 #nocov end
+
+
+#' Generate dummy PO file content
+#' @param copyright_holder string
+#' @param package_name string
+#' @param package_date string
+#' @param language_team string
+#' @param language string
+#' @return string
+#' @keywords internal
+generate_po <- function(copyright_holder, package_name, package_date, language_team, language) {
+    paste0(
+        '# Copyright (C) ', format(Sys.time(), '%Y'), ' ', copyright_holder, '\n',
+        'msgid ""\nmsgstr ""\n',
+        '"Project-Id-Version: ', package_name, ' 1.0\\n"\n',
+        '"POT-Creation-Date: ', package_date, '\\n"\n',
+        '"PO-Revision-Date: ', format(Sys.time()), '\\n"\n',
+        '"Last-Translator: ', language_team, '\\n"\n',
+        '"Language-Team: ', language_team, '\\n"\n',
+        ifelse(missing(language), '', paste0('"Language: ', language, '\\n"\n')),
+        '"MIME-Version: 1.0\\n"\n',
+        '"Content-Type: text/plain; charset=UTF-8\\n"\n',
+        '"Content-Transfer-Encoding: 8bit\\n"\n\n')
+}

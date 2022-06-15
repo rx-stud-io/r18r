@@ -7,7 +7,8 @@
 translations_generate(
   folder,
   copyright_holder = NA_character_,
-  language_team = NA_character_
+  language_team = NA_character_,
+  languages
 )
 }
 \arguments{
@@ -16,6 +17,8 @@ translations_generate(
 \item{copyright_holder}{name of the organization or person owning the rights over the PO files}
 
 \item{language_team}{name and email address of the team}
+
+\item{languages}{optional character vector of language codes to translate (use to add new languages)}
 }
 \description{
 Generate \code{PO} files for the package based on \code{translate} calls
