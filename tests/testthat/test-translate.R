@@ -32,6 +32,15 @@ test_that('set default language', {
     expect_equal(translate_get_language('r18n'), 'en')
 })
 
+test_that('translations', {
+    ## not enough args
+    expect_error(translate())
+    expect_error(translate('Text to be translated', 'en'))
+    ## finally
+    expect_equal(translate('Text to be translated', 'en', 'r18n'), 'Text to be translated')
+    expect_equal(test_translate(), 'Text to be translated')
+})
+
 test_that('cleanup', {
     expect_error(translations_cleanup('r18n'), NA)
 })
