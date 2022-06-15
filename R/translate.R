@@ -150,10 +150,10 @@ translatable <- function(text, comment_to_translator = NA_character_) {
 #' @export
 T <- translatable
 
-#' Test if translation works for a language by looking up OK
+
+#' Test if translation works for a language by looking up a term
 #' @return string
 #' @export
 test_translate <- function() {
-    translate(translatable('OK'))
+    translate(translatable('Text to be translated', 'Example comment'))
 }
-
