@@ -28,7 +28,7 @@ translations_generate <- function(folder,
         if (is.call(e) && is.name(e[[1L]]) && (as.character(e[[1L]]) %in% c('T', 'translatable'))) {
             ## extract text to be translated and comment to be passed to the translator
             text <- eval(e[[2]])
-            if (!is.null(text) && test_is.character(text)) {
+            if (!is.null(text) && is.character(text)) {
                 log_trace(skip_formatter(paste('Text to translate:', as.character(text))))
                 comment <- ifelse(length(e) > 2, eval(e[[3]]), NA_character_)
                 strings <<- c(strings, list(list(text = text, comment = comment)))
