@@ -57,6 +57,9 @@ translations_generate <- function(folder,
     ##      as the current implementation is too specific to the Rx Studio packages
 
     pot <- path.expand(file.path(folder, 'inst', 'i18n', paste(package_name, 'pot', sep = '.')))
+    if (!dir.exists(dirname(pot))) {
+        dir.create(dirname(pot), recursive = TRUE)
+    }
     cat('# Copyright (C) ', format(Sys.time(), '%Y'), ' ', copyright_holder, '\nmsgid ""\nmsgstr ""\n"Project-Id-Version: ', package_name, ' 1.0\\n"\n"POT-Creation-Date: ', package_date, '\\n"\n"PO-Revision-Date: ', format(Sys.time()), '\\n"\n"Last-Translator: ', language_team, '\\n"\n"Language-Team: ', language_team, '\\n"\n"MIME-Version: 1.0\\n"\n"Content-Type: text/plain; charset=UTF-8\\n"\n"Content-Transfer-Encoding: 8bit\\n"\n\n', sep = '', file = pot) # nolint
 
     ## drop duplicates
