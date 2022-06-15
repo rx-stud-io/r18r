@@ -14,7 +14,7 @@ Since the `r18r` package  has been just open-sourced and we are still finishing 
 
 ```r
 library(remotes)
-install_github(“rx-stud-io/r18n”)
+install_github('rx-stud-io/r18r')
 ```
 
 ## Quick demo
