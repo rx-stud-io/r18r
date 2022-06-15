@@ -20,11 +20,11 @@ Load PO files and cache in the package namespace
 }
 \examples{
 \dontrun{
-translations_import(system.file('i18n', package = 'r18n'), 'r18n')
-translate_set_language('en', 'r18n')
-translate_get_language('r18n')
-translations('en', 'r18n')
-translate('Text to be translated', ns = 'r18n')
-translations_cleanup('r18n')
+translations_import(system.file('i18n', package = 'r18r'), 'r18r')
+translate_set_language('en', 'r18r')
+translate_get_language('r18r')
+translations('en', 'r18r')
+translate('Text to be translated', ns = 'r18r')
+translations_cleanup('r18r')
 }
 }

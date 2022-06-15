@@ -1,7 +1,7 @@
 # Copyright (C) 2022 Rx Studio Inc.
 msgid ""
 msgstr ""
-"Project-Id-Version: r18n 1.0\n"
+"Project-Id-Version: r18r 1.0\n"
 "POT-Creation-Date: 2022-06-15\n"
 "PO-Revision-Date: 2022-06-15 00:00:00\n"
 "Last-Translator: Rx Studio <support@rx.studio>\n"

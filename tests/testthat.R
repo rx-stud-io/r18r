@@ -1,4 +1,4 @@
 library(testthat)
-library(r18n)
+library(r18r)
 
-test_check('r18n')
+test_check('r18r')

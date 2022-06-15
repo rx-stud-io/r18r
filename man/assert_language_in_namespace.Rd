@@ -19,7 +19,7 @@ Assert a language is available in a namespace
 }
 \examples{
 \dontrun{
-assert_language_in_namespace('en', 'r18n')
+assert_language_in_namespace('en', 'r18r')
 }
 }
 \keyword{internal}

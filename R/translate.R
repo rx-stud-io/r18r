@@ -8,7 +8,7 @@
 assert_namespace <- function(ns) {
     stopifnot(!missing(ns), !is.null(ns))
     if (is.null(.translations[[ns]])) {
-        stop(paste('r18n namespace not found for', shQuote(ns), '- did you run translations_import?'))
+        stop(paste('r18r namespace not found for', shQuote(ns), '- did you run translations_import?'))
     }
 }
 
@@ -19,7 +19,7 @@ assert_namespace <- function(ns) {
 #' @return No return value.
 #' @keywords internal
 #' @examples \dontrun{
-#' assert_language_in_namespace('en', 'r18n')
+#' assert_language_in_namespace('en', 'r18r')
 #' }
 assert_language_in_namespace <- function(language, ns) {
     assert_namespace(ns)
@@ -46,12 +46,12 @@ translated_languages <- function(ns) {
 #' @export
 #' @return No return value.
 #' @examples \dontrun{
-#' translations_import(system.file('i18n', package = 'r18n'), 'r18n')
-#' translate_set_language('en', 'r18n')
-#' translate_get_language('r18n')
-#' translations('en', 'r18n')
-#' translate('Text to be translated', ns = 'r18n')
-#' translations_cleanup('r18n')
+#' translations_import(system.file('i18n', package = 'r18r'), 'r18r')
+#' translate_set_language('en', 'r18r')
+#' translate_get_language('r18r')
+#' translations('en', 'r18r')
+#' translate('Text to be translated', ns = 'r18r')
+#' translations_cleanup('r18r')
 #' }
 translations_import <- function(folder, ns) {
 
@@ -97,7 +97,7 @@ translate_get_language <- function(ns) {
     assert_namespace(ns)
     language <- tryCatch(.translations[[ns]]$`.language`, error = function(e) NULL)
     if (is.null(language)) {
-        stop('No default language set. Did you call r18n::translate_set_language?')
+        stop('No default language set. Did you call r18r::translate_set_language?')
     }
     language
 }
@@ -154,7 +154,7 @@ T <- translatable
 #' @return string
 #' @export
 test_translate <- function(language = 'en') {
-    translate(translatable('Text to be translated', 'Example comment'), language, ns = 'r18n')
+    translate(translatable('Text to be translated', 'Example comment'), language, ns = 'r18r')
 }
 
 
