@@ -33,7 +33,7 @@ assert_language_in_namespace <- function(language, ns) {
 #' @return character vector of language codes
 #' @export
 #' @inheritParams assert_namespace
-translated_languages <- function(ns) {
+translated_languages <- function(ns = caller()) {
     assert_namespace(ns)
     get(ns, envir = .translations)$`.languages`
 }
@@ -53,7 +53,7 @@ translated_languages <- function(ns) {
 #' translate('Text to be translated', ns = 'r18r')
 #' translations_cleanup('r18r')
 #' }
-translations_import <- function(folder, ns) {
+translations_import <- function(folder, ns = caller()) {
 
     files <- po_files(folder)
     languages <- sub('.po', '', files)
@@ -73,7 +73,7 @@ translations_import <- function(folder, ns) {
 #' @return No return value.
 #' @export
 #' @inheritParams assert_namespace
-translations_cleanup <- function(ns) {
+translations_cleanup <- function(ns = caller()) {
     .translations[[ns]] <- NULL
 }
 
@@ -82,7 +82,7 @@ translations_cleanup <- function(ns) {
 #' @return No return value.
 #' @export
 #' @inheritParams translated_languages
-translate_set_language <- function(language, ns) {
+translate_set_language <- function(language, ns = caller()) {
     assert_namespace(ns)
     assert_language_in_namespace(language, ns)
     .translations[[ns]]$`.language` <- language
@@ -93,7 +93,7 @@ translate_set_language <- function(language, ns) {
 #' @return string
 #' @export
 #' @inheritParams translated_languages
-translate_get_language <- function(ns) {
+translate_get_language <- function(ns = caller()) {
     assert_namespace(ns)
     language <- tryCatch(.translations[[ns]]$`.language`, error = function(e) NULL)
     if (is.null(language)) {
@@ -107,7 +107,7 @@ translate_get_language <- function(ns) {
 #' @inheritParams translate_set_language
 #' @return list
 #' @export
-translations <- function(language, ns) {
+translations <- function(language, ns = caller()) {
     assert_namespace(ns)
     assert_language_in_namespace(language, ns)
     .translations[[ns]]$translations[[language]]
@@ -124,7 +124,7 @@ translations <- function(language, ns) {
 #'     or \code{T}, as extracting all text withing \code{translate}
 #'     would not be possible due to dynamic values to be translated
 #'     (e.g. when text to be translated is stored in a variable).
-translate <- function(text, language = translate_get_language(ns), ns) {
+translate <- function(text, language = translate_get_language(ns), ns = caller()) {
     translation <- translations(language, ns)[[text, exact = TRUE]]
     if (is.null(translation) || translation == '') {
         stop(paste('Missing translation of', shQuote(text),

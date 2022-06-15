@@ -4,7 +4,7 @@
 \alias{translate_get_language}
 \title{Get current translation language}
 \usage{
-translate_get_language(ns)
+translate_get_language(ns = caller())
 }
 \arguments{
 \item{ns}{namespace used from \code{translations_import}}

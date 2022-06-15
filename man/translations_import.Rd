@@ -4,7 +4,7 @@
 \alias{translations_import}
 \title{Load PO files and cache in the package namespace}
 \usage{
-translations_import(folder, ns)
+translations_import(folder, ns = caller())
 }
 \arguments{
 \item{folder}{path to root folder of language files, where to find

@@ -4,7 +4,7 @@
 \alias{translated_languages}
 \title{List translated languages based on the list of PO files in the folder}
 \usage{
-translated_languages(ns)
+translated_languages(ns = caller())
 }
 \arguments{
 \item{ns}{namespace used from \code{translations_import}}

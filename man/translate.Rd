@@ -4,7 +4,7 @@
 \alias{translate}
 \title{Translate string}
 \usage{
-translate(text, language = translate_get_language(ns), ns)
+translate(text, language = translate_get_language(ns), ns = caller())
 }
 \arguments{
 \item{text}{string to be translated}

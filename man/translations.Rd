@@ -4,7 +4,7 @@
 \alias{translations}
 \title{Return all translations for a language}
 \usage{
-translations(language, ns)
+translations(language, ns = caller())
 }
 \arguments{
 \item{ns}{namespace used from \code{translations_import}}

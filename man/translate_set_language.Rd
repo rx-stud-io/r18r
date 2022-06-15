@@ -4,7 +4,7 @@
 \alias{translate_set_language}
 \title{Set translation language}
 \usage{
-translate_set_language(language, ns)
+translate_set_language(language, ns = caller())
 }
 \arguments{
 \item{ns}{namespace used from \code{translations_import}}

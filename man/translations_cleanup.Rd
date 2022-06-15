@@ -4,7 +4,7 @@
 \alias{translations_cleanup}
 \title{Drop all translations and settings for a namespace}
 \usage{
-translations_cleanup(ns)
+translations_cleanup(ns = caller())
 }
 \arguments{
 \item{ns}{namespace used from \code{translations_import}}
