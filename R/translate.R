@@ -105,7 +105,6 @@ translate_get_language <- function(ns) {
 
 #' Return all translations for a language
 #' @inheritParams translate_set_language
-#' @param ns
 #' @return list
 #' @export
 translations <- function(language, ns) {
@@ -164,3 +163,4 @@ test_translate <- function(language = 'en') {
 unused <- function() {
     T('R')
 }
+
