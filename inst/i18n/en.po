@@ -14,3 +14,6 @@ msgstr ""
 #. Example comment
 msgid "Text to be translated"
 msgstr ""
+
+msgid "R"
+msgstr ""

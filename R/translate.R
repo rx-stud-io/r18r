@@ -154,6 +154,13 @@ T <- translatable
 #' Test if translation works for a language by looking up a term
 #' @return string
 #' @export
-test_translate <- function(language = 'en', ns = 'r18n') {
-    translate(translatable('Text to be translated', 'Example comment'), language, ns)
+test_translate <- function(language = 'en') {
+    translate(translatable('Text to be translated', 'Example comment'), language, ns = 'r18n')
+}
+
+
+#' Container for future translations
+#' @keywords internal
+unused <- function() {
+    T('R')
 }

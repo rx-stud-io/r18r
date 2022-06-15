@@ -4,7 +4,7 @@
 \alias{test_translate}
 \title{Test if translation works for a language by looking up a term}
 \usage{
-test_translate(language = "en", ns = "r18n")
+test_translate(language = "en")
 }
 \value{
 string

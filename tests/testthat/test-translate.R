@@ -39,6 +39,7 @@ test_that('translations', {
     ## finally
     expect_equal(translate('Text to be translated', 'en', 'r18n'), 'Text to be translated')
     expect_equal(test_translate(), 'Text to be translated')
+    expect_equal(test_translate(language = 'hu'), 'Fordítandó szöveg')
 })
 
 test_that('cleanup', {
