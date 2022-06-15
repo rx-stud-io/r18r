@@ -1,0 +1,16 @@
+Type: Package
+Package: r18r.example
+Authors@R: c(
+    person("Gergely", "Daróczi", email = "daroczig@rx.studio", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-3149-8537")),
+    person("Rx Studio Inc.", role = c("fnd"))
+    )
+Title: Example for 'r18r'
+Description: Example package using the `r18r` package.
+Version: 0.1
+Date: 2022-06-15
+URL: https://github.com/rx-stud-io/r18r
+Language: en-US
+Encoding: UTF-8
+License: file LICENSE
+Imports: r18n
+RoxygenNote: 7.1.2
