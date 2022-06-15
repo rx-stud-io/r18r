@@ -5,7 +5,7 @@ po_folder <- system.file('i18n', package = 'r18r')
 po_file <- file.path(po_folder, 'en.po')
 
 test_that('read PO files', {
-    expect_length(po_read(po_file), 2)
+    expect_length(po_read(po_file), 3)
     expect_equal(po_read(po_file)$`Text to be translated`,'Text to be translated')
 })
 
