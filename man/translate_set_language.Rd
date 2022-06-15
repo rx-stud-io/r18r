@@ -7,6 +7,8 @@
 translate_set_language(language, ns = caller())
 }
 \arguments{
+\item{language}{two-character language code, e.g. \code{en}}
+
 \item{ns}{namespace used from \code{translations_import}}
 }
 \value{

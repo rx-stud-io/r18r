@@ -81,7 +81,7 @@ translations_cleanup <- function(ns = caller()) {
 #' Set translation language
 #' @return No return value.
 #' @export
-#' @inheritParams translated_languages
+#' @inheritParams assert_language_in_namespace
 translate_set_language <- function(language, ns = caller()) {
     assert_namespace(ns)
     assert_language_in_namespace(language, ns)
