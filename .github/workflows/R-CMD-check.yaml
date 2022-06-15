@@ -42,4 +42,8 @@ jobs:
         with:
           extra-packages: rcmdcheck, microbenchmark
 
+      - name: Install pkg
+        run: devtools::install()
+        shell: Rscript {0}
+
       - uses: r-lib/actions/check-r-package@v1
