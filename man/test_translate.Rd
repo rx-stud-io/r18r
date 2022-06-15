@@ -2,7 +2,7 @@
 % Please edit documentation in R/translate.R
 \name{test_translate}
 \alias{test_translate}
-\title{Test if translation works for a language by looking up OK}
+\title{Test if translation works for a language by looking up a term}
 \usage{
 test_translate()
 }
@@ -10,5 +10,5 @@ test_translate()
 string
 }
 \description{
-Test if translation works for a language by looking up OK
+Test if translation works for a language by looking up a term
 }
