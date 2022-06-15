@@ -1,4 +1,4 @@
-# r18r
+# r18r <img src="man/figures/logo.png" align="right" height="200" />
 
 This is an R package to help translating other packages - with heavy focus on marking terms in a package for translation along with comments for the translators.
 
