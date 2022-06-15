@@ -59,5 +59,5 @@ This package was heavily inspired by previous work of others, so expressing my g
 * Michael Chirico for `potools` and driving the recent translation efforts around R, including the awesome [tutorial at useR! 2021](https://contributor.r-project.org/translating-r-to-your-language/).
 * Michael Lawrence for maintaining and managing [translations in R Core](https://translation.r-project.org/).
 * Heather Turner and Saranjeet Kaur for the Collaboration Campfires series on "Learn how to contribute to R!", including the overview on R's process for localization and "How to Contribute to a Translation Team".
-* The authors of the `hexSticker` R package, [vecteezy.com](https://www.vecteezy.com/vector-art/3001221-freehand-world-map-sketch-on-white-background), and Tart Workshop for their contributions to the hex logo of the package.
+* The authors of the `hexSticker` R package (for the awesome tool generating hex logos), [vecteezy.com](https://www.vecteezy.com/vector-art/3001221-freehand-world-map-sketch-on-white-background) (for the world map sketch image), and Tart Workshop (for the "Fredericka the Great" font) in the creation of package logo.
 * [Rx Studio Inc.](https://rx.studio) for sponsoring the internal development and the open-sourcing efforts of this project.
